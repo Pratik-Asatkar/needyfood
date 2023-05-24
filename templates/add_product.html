@@ -1,76 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-</head>
-
-<body class="bg-gray-100">
-  <div class="flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-md w-96">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post"
-        action="{{ url_for('product.add_product') }}" enctype="multipart/form-data">
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-name">
-            Product Name
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-name" type="text" placeholder="Product Name" name="name" />
+{% extends "base.html" %} {% block content %}
+<main id="main">
+  <section id="contact" class="contact mt-10">
+    <div class="container mt-5">
+      <form
+        action="{{ url_for('auth.register')}}"
+        method="post"
+        role="form"
+        class="php-email-form"
+      >
+        <div class="row">
+          <div class="form-group">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="product-name"
+              placeholder="Title of Your Food"
+              required
+            />
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <textarea
+                name="short_desc"
+                class="form-control"
+                id="product-description"
+                placeholder="Short Description of food"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <textarea
+                name="description"
+                class="form-control"
+                id="description"
+                placeholder="Detailed info of food"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <input
+                type="text"
+                name="category"
+                class="form-control"
+                id="category"
+                placeholder="Give category of food"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+                <input
+                class="form-control"
+                id="product-price"
+                type="number"
+                name="price"
+                placeholder="For how many person"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+                <input
+                class="form-control"
+                id="product-image"
+                type="file"
+                name="img"
+                accept=".jpg,.jpeg,.png"
+                placeholder="give image of food"
+              />
+            </div>
+          </div>
         </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-description">
-            Short Description
-          </label>
-          <textarea
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-description" placeholder="Product Description" name="short_desc"></textarea>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
-            Description
-          </label>
-          <textarea
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="description" placeholder="Product Description" name="description"></textarea>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="category">
-            Category
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="category" type="text" placeholder="Product Name" name="category" />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-price">
-            Product Price
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-price" type="number" name="price" placeholder="Product Price" />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-image">
-            Product Image
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-image" type="file" name="img" accept=".jpg,.jpeg,.png" />
-        </div>
-        <div class="flex items-center justify-between">
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit">
-            Add Product
-          </button>
+        <div class="text-center mt-2">
+          <button type="submit" class="book-a-table-btn btn">Add Food</button>
         </div>
       </form>
+      <!-- <p class="text-center">
+        Already have an account
+        <a href="{{url_for('auth.register')}}">Login</a>
+      </p> -->
     </div>
-  </div>
-</body>
-
-</html>
+  </section>
+  <!-- End Contact Section -->
+</main>
+{% endblock %}
