@@ -1,233 +1,224 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero">
-      <div class="hero-container">
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+  <div class="hero-container">
+    <div
+      id="heroCarousel"
+      data-bs-interval="5000"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide 1 -->
         <div
-          id="heroCarousel"
-          data-bs-interval="5000"
-          class="carousel slide carousel-fade"
-          data-bs-ride="carousel"
+          class="carousel-item active"
+          style="background-image: url(assets/img/slide/slide-1.jpg)"
         >
-          <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-          <div class="carousel-inner" role="listbox">
-            <!-- Slide 1 -->
-            <div
-              class="carousel-item active"
-              style="background-image: url(assets/img/slide/slide-1.jpg)"
-            >
-              <div class="carousel-container">
-                <div class="carousel-content">
-                  <h2 class="animate__animated animate__fadeInDown">
-                    <span>Delicious</span> For All
-                  </h2>
-                  <p class="animate__animated animate__fadeInUp">
-                    Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-                    ut et est quaerat sequi nihil ut aliquam. Occaecati alias
-                    dolorem mollitia ut. Similique ea voluptatem. Esse
-                    doloremque accusamus repellendus deleniti vel. Minus et
-                    tempore modi architecto.
-                  </p>
-                  <div>
-                    <a
-                      href="#menu"
-                      class="btn-menu animate__animated animate__fadeInUp scrollto"
-                      >Get Food</a
-                    >
-                    <a
-                      href="/product/add"
-                      class="btn-book animate__animated animate__fadeInUp scrollto"
-                      >Donate Food
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div
-              class="carousel-item"
-              style="background-image: url(assets/img/slide/slide-2.jpg)"
-            >
-              <div class="carousel-container">
-                <div class="carousel-content">
-                  <h2 class="animate__animated animate__fadeInDown">
-                    Lorem Ipsum Dolor
-                  </h2>
-                  <p class="animate__animated animate__fadeInUp">
-                    Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-                    ut et est quaerat sequi nihil ut aliquam. Occaecati alias
-                    dolorem mollitia ut. Similique ea voluptatem. Esse
-                    doloremque accusamus repellendus deleniti vel. Minus et
-                    tempore modi architecto.
-                  </p>
-                  <div>
-                    <a
-                      href="#menu"
-                      class="btn-menu animate__animated animate__fadeInUp scrollto"
-                      >Get Food</a
-                    >
-                    <a
-                      href="/product/add"
-                      class="btn-book animate__animated animate__fadeInUp scrollto"
-                      >Donate Food
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div
-              class="carousel-item"
-              style="background-image: url(assets/img/slide/slide-3.jpg)"
-            >
-              <div class="carousel-container">
-                <div class="carousel-content">
-                  <h2 class="animate__animated animate__fadeInDown">
-                    Sequi ea ut et est quaerat
-                  </h2>
-                  <p class="animate__animated animate__fadeInUp">
-                    Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-                    ut et est quaerat sequi nihil ut aliquam. Occaecati alias
-                    dolorem mollitia ut. Similique ea voluptatem. Esse
-                    doloremque accusamus repellendus deleniti vel. Minus et
-                    tempore modi architecto.
-                  </p>
-                  <div>
-                    <a
-                      href="#menu"
-                      class="btn-menu animate__animated animate__fadeInUp scrollto"
-                      >Get Food</a
-                    >
-                    <a
-                      href="/product/add"
-                      class="btn-book animate__animated animate__fadeInUp scrollto"
-                      >Donate Food
-                    </a>
-                  </div>
-                </div>
+          <div class="carousel-container">
+            <div class="carousel-content">
+              <h2 class="animate__animated animate__fadeInDown">
+                <span>Delicious</span> For All
+              </h2>
+              <p class="animate__animated animate__fadeInUp">
+                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
+                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
+                repellendus deleniti vel. Minus et tempore modi architecto.
+              </p>
+              <div>
+                <a
+                  href="#menu"
+                  class="btn-menu animate__animated animate__fadeInUp scrollto"
+                  >Get Food</a
+                >
+                <a
+                  href="/product/add"
+                  class="btn-book animate__animated animate__fadeInUp scrollto"
+                  >Donate Food
+                </a>
               </div>
             </div>
           </div>
+        </div>
 
-          <a
-            class="carousel-control-prev"
-            href="#heroCarousel"
-            role="button"
-            data-bs-slide="prev"
+        <!-- Slide 2 -->
+        <div
+          class="carousel-item"
+          style="background-image: url(assets/img/slide/slide-2.jpg)"
+        >
+          <div class="carousel-container">
+            <div class="carousel-content">
+              <h2 class="animate__animated animate__fadeInDown">
+                Lorem Ipsum Dolor
+              </h2>
+              <p class="animate__animated animate__fadeInUp">
+                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
+                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
+                repellendus deleniti vel. Minus et tempore modi architecto.
+              </p>
+              <div>
+                <a
+                  href="#menu"
+                  class="btn-menu animate__animated animate__fadeInUp scrollto"
+                  >Get Food</a
+                >
+                <a
+                  href="/product/add"
+                  class="btn-book animate__animated animate__fadeInUp scrollto"
+                  >Donate Food
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div
+          class="carousel-item"
+          style="background-image: url(assets/img/slide/slide-3.jpg)"
+        >
+          <div class="carousel-container">
+            <div class="carousel-content">
+              <h2 class="animate__animated animate__fadeInDown">
+                Sequi ea ut et est quaerat
+              </h2>
+              <p class="animate__animated animate__fadeInUp">
+                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
+                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
+                repellendus deleniti vel. Minus et tempore modi architecto.
+              </p>
+              <div>
+                <a
+                  href="#menu"
+                  class="btn-menu animate__animated animate__fadeInUp scrollto"
+                  >Get Food</a
+                >
+                <a
+                  href="/product/add"
+                  class="btn-book animate__animated animate__fadeInUp scrollto"
+                  >Donate Food
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a
+        class="carousel-control-prev"
+        href="#heroCarousel"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon bi bi-chevron-left"
+          aria-hidden="true"
+        ></span>
+      </a>
+
+      <a
+        class="carousel-control-next"
+        href="#heroCarousel"
+        role="button"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon bi bi-chevron-right"
+          aria-hidden="true"
+        ></span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- End Hero -->
+
+<main id="main">
+  <!-- ======= Whu Us Section ======= -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <div class="section-title">
+        <h2>Food <span>for All</span></h2>
+        <p>all type of foods at all times</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <a href="{{url_for('category.category_home',categoryid='main')}}"
+            ><div class="box">
+              <span>01</span>
+              <h4>main course</h4>
+              <p>lunch or dinner. Click here to know more.....</p>
+            </div></a
           >
-            <span
-              class="carousel-control-prev-icon bi bi-chevron-left"
-              aria-hidden="true"
-            ></span>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <a href="{{url_for('category.category_home',categoryid='snacks')}}">
+            <div class="box">
+              <span>02</span>
+              <h4>breakfasts</h4>
+              <p>snacks and breakfasts. Click here to know more.....</p>
+            </div>
           </a>
+        </div>
 
-          <a
-            class="carousel-control-next"
-            href="#heroCarousel"
-            role="button"
-            data-bs-slide="next"
-          >
-            <span
-              class="carousel-control-next-icon bi bi-chevron-right"
-              aria-hidden="true"
-            ></span>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <a href="{{url_for('category.category_home',categoryid='liquid')}}">
+            <div class="box">
+              <span>03</span>
+              <h4>water</h4>
+              <p>Water is life. Click here to know more.....</p>
+            </div>
           </a>
         </div>
       </div>
-    </section>
-    <!-- End Hero -->
+    </div>
+  </section>
+  <!-- End Whu Us Section -->
 
-    <main id="main">
-      <!-- ======= Whu Us Section ======= -->
-      <section id="why-us" class="why-us">
-        <div class="container">
-          <div class="section-title">
-            <h2>Food <span>for All</span></h2>
-            <p>all type of foods at all times</p>
-          </div>
+  <!-- ======= Menu Section ======= -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured <span>Food Donations</span></h2>
+      </div>
 
-          <div class="row">
-            <div class="col-lg-4">
-              <a href="{{url_for('category.category_home',categoryid='main')}}"
-                ><div class="box">
-                  <span>01</span>
-                  <h4>main course</h4>
-                  <p>lunch or dinner. Click here to know more.....</p>
-                </div></a
-              >
-            </div>
-
-            <div class="col-lg-4 mt-4 mt-lg-0">
-              <a
-                href="{{url_for('category.category_home',categoryid='snacks')}}"
-              >
-                <div class="box">
-                  <span>02</span>
-                  <h4>breakfasts</h4>
-                  <p>snacks and breakfasts. Click here to know more.....</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-lg-4 mt-4 mt-lg-0">
-              <a
-                href="{{url_for('category.category_home',categoryid='liquid')}}"
-              >
-                <div class="box">
-                  <span>03</span>
-                  <h4>water</h4>
-                  <p>Water is life. Click here to know more.....</p>
-                </div>
-              </a>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="menu-flters">
+            <li data-filter="*" class="filter-active">Show All</li>
+          </ul>
         </div>
-      </section>
-      <!-- End Whu Us Section -->
+      </div>
 
-      <!-- ======= Menu Section ======= -->
-      <section id="menu" class="menu">
-        <div class="container">
-          <div class="section-title">
-            <h2>Featured <span>Food Donations</span></h2>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-12 d-flex justify-content-center">
-              <ul id="menu-flters">
-                <li data-filter="*" class="filter-active">Show All</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="row menu-container">
-            <div class="col-lg-6 menu-item filter-starters">
-              {% for products in featured %}
+      <div class="row menu-container">
+        <div class="col-lg-6 menu-item filter-starters">
+          {% for product in featured %}
+          <a
+            href="{{ url_for('product.product_info',productid = product['_id'])}}"
+          >
+            <div class="menu-content">
               <a
-                href="{{ url_for('product.product_info',productid=product['_id'])}}"
-              >
-                <div class="menu-content">
-                  <a
-                    href="{{ url_for('product.product_info',productid=product['_id'])}}"
-                    >{{ product['name']}}</a
-                  ><span>quantity: {{ product['price']}}</span>
-                </div>
-                <div class="menu-ingredients">{{ product['short_desc']}}</div>
-              </a>
-              {% endfor %}
+                href="{{ url_for('product.product_info',productid =product['_id']) }}"
+                >{{ product['name']}}</a
+              ><span>quantity: {{ product['price']}}</span>
             </div>
-          </div>
+            <div class="menu-ingredients">{{ product['short_desc']}}</div>
+          </a>
+          {% endfor %}
         </div>
-      </section>
-      <!-- End Menu Section -->
+      </div>
+    </div>
+  </section>
+  <!-- End Menu Section -->
 
-
-      <!-- ======= Book A Table Section ======= -->
-      <!-- <section id="book-a-table" class="book-a-table">
+  <!-- ======= Book A Table Section ======= -->
+  <!-- <section id="book-a-table" class="book-a-table">
         <div class="container">
           <div class="section-title">
             <h2>Book a <span>Table</span></h2>
@@ -340,10 +331,10 @@
           </form>
         </div>
       </section> -->
-      <!-- End Book A Table Section -->
+  <!-- End Book A Table Section -->
 
-      <!-- ======= Gallery Section ======= -->
-      <!-- <section id="gallery" class="gallery">
+  <!-- ======= Gallery Section ======= -->
+  <!-- <section id="gallery" class="gallery">
         <div class="container-fluid">
           <div class="section-title">
             <h2>Some photos from <span>Our Restaurant</span></h2>
@@ -476,10 +467,10 @@
           </div>
         </div>
       </section> -->
-      <!-- End Gallery Section -->
+  <!-- End Gallery Section -->
 
-      <!-- ======= Chefs Section ======= -->
-      <!-- <section id="chefs" class="chefs">
+  <!-- ======= Chefs Section ======= -->
+  <!-- <section id="chefs" class="chefs">
         <div class="container">
           <div class="section-title">
             <h2>Our Proffesional <span>Chefs</span></h2>
@@ -558,59 +549,59 @@
           </div>
         </div>
       </section> -->
-      <!-- End Chefs Section -->
+  <!-- End Chefs Section -->
 
-      <!-- ======= Contact Section ======= -->
-      <section id="contact" class="contact">
-        <div class="container">
-          <div class="section-title">
-            <h2><span>Contact</span> Us</h2>
-            <p>
-              Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-              adipisci expedita at voluptas atque vitae autem.
-            </p>
-          </div>
-        </div>
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2><span>Contact</span> Us</h2>
+        <p>
+          Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
+          adipisci expedita at voluptas atque vitae autem.
+        </p>
+      </div>
+    </div>
 
-        <div class="map">
-          <iframe
-            style="border: 0; width: 100%; height: 350px"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
+    <div class="map">
+      <iframe
+        style="border: 0; width: 100%; height: 350px"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
 
-        <div class="container mt-5">
-          <div class="info-wrap">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 info">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street<br />New York, NY 535022</p>
-              </div>
-
-              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
-                <i class="bi bi-clock"></i>
-                <h4>Open Hours:</h4>
-                <p>Monday-Saturday:<br />11:00 AM - 2300 PM</p>
-              </div>
-
-              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com<br />contact@example.com</p>
-              </div>
-
-              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 51<br />+1 5589 22475 14</p>
-              </div>
-            </div>
+    <div class="container mt-5">
+      <div class="info-wrap">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 info">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>A108 Adam Street<br />New York, NY 535022</p>
           </div>
 
-          <!-- <form
+          <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+            <i class="bi bi-clock"></i>
+            <h4>Open Hours:</h4>
+            <p>Monday-Saturday:<br />11:00 AM - 2300 PM</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>info@example.com<br />contact@example.com</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>+1 5589 55488 51<br />+1 5589 22475 14</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <form
             action="forms/contact.php"
             method="post"
             role="form"
@@ -668,9 +659,9 @@
               <button type="submit">Send Message</button>
             </div>
           </form> -->
-        </div>
-      </section>
-      <!-- End Contact Section -->
-    </main>
-    <!-- End #main -->
+    </div>
+  </section>
+  <!-- End Contact Section -->
+</main>
+<!-- End #main -->
 {% endblock %}

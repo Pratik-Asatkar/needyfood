@@ -6,7 +6,7 @@
         action="{{ url_for('auth.register')}}"
         method="post"
         role="form"
-        class="php-email-form"
+        class=""
       >
         <div class="row">
           <div class="form-group">
@@ -72,7 +72,7 @@
       </form>
       <p class="text-center">
         Already have an account
-        <a href="{{url_for('auth.register')}}">Login</a>
+        <a href="{{url_for('auth.login')}}">Login</a>
       </p>
     </div>
   </section>
