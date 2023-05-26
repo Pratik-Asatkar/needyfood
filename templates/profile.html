@@ -1,46 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  </head>
-  <body class="bg-gray-100">
-    <header class="bg-white shadow-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <h1 class="text-3xl font-bold">Dairy Delights</h1>
-        <nav>
-          <ul class="flex space-x-4">
-            <li><a href="#" class="text-gray-700 hover:text-gray-900">Home</a></li>
-            <li><a href="#" class="text-gray-700 hover:text-gray-900">Products</a></li>
-            <li><a href="#" class="text-gray-700 hover:text-gray-900">About</a></li>
-            <li><a href="{{ url_for('auth.logout') }}" class="text-gray-700 hover:text-gray-900">Logout</a></li>
-          </ul>
-        </nav>
+{% extends "base.html" %} {% block content%}
+
+<section class="h-100 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card">
+            <div class="rounded-top text-white " style="background-color: #000; height:200px;">
+              <div class="ms-3 text-center" style="margin-top: 130px;">
+                <h5 class="text-center"></span> {{ user['name'] }}</h5>
+              </div>
+            </div>
+            <div class="card-body p-4 text-black">
+              <div class="mb-5">
+                <p class="lead fw-normal mb-1">About</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+                  <p class="font-italic mb-1">{{ user['email'] }}</p>
+                  <p class="font-italic mb-1">{{ user['address'] }}, {{ user['pincode'] }}</p>
+        
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="lead fw-normal mb-0">Order History</p>
+              </div>
+              {% for cart in user['previous_orders'] %}
+              <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                  <div class="col">
+                    <div class="card card-stepper" style="border-radius: 10px;">
+                      <div class="card-body p-4">
+            
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex flex-column">
+                            <span class="lead fw-normal">Your order #{{ cart['cartid'] }} has been delivered</span>
+                            <span class="text-muted small">by DHFL on {{ cart['time'] }}</span>
+                          </div>
+                        </div>
+                        <hr class="my-4">
+            
+                        <div class="d-flex flex-row justify-content-between align-items-center align-content-center">
+                          <span class="dot"></span>
+                          <hr class="flex-fill track-line"><span class="dot"></span>
+                          <hr class="flex-fill track-line"><span class="dot"></span>
+                          <hr class="flex-fill track-line"><span class="dot"></span>
+                          <hr class="flex-fill track-line"><span
+                            class="d-flex justify-content-center align-items-center big-dot dot">
+                            <i class="fa fa-check text-white"></i></span>
+                        </div>
+            
+                        <!-- <div class="d-flex flex-row justify-content-between align-items-center">
+                          <div class="d-flex flex-column align-items-start"><span>{{ cart['time'] }}</span><span>Order placed</span>
+                          </div>
+                          <div class="d-flex flex-column justify-content-center"><span>{{ cart['time'] }}</span><span>Order
+                              placed</span></div>
+                          <div class="d-flex flex-column justify-content-center align-items-center"><span>{{ cart['time'] }}</span><span>Order Dispatched</span></div>
+                          <div class="d-flex flex-column align-items-center"><span>{{ cart['time'] }}</span><span>Out for
+                              delivery</span></div>
+                          <div class="d-flex flex-column align-items-end"><span>{{ cart['time'] }}</span><span>Delivered</span></div>
+                        </div>
+             -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 class="text-3xl font-bold mb-8">User Profile</h2>
-      <section class="mb-12">
-        <h3 class="text-xl font-medium mb-4">User Details</h3>
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <p><span class="font-medium">Name:</span> {{ user['name'] }}</p>
-          <p><span class="font-medium">Email:</span> {{ user['email'] }}</p>
-          <p><span class="font-medium">Address:</span> {{ user['address'] }}, {{ user['pincode'] }}</p>
-        </div>
-      </section>
-      <section class="<EUGPSCoordinates>mb<EUGPSCoordinates>-12">
-        <h3 class="<EUGPSCoordinates>text-xl font-medium mb<EUGPSCoordinates>-4">Order History</h3>
-        {% for cart in user['previous_orders'] %}
-        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-            <p><span class="font-medium">Order #:</span> {{ cart['cartid'] }}</p>
-            <p><span class="font-medium">Date:</span> {{ cart['time'] }}</p>
-            <p><span class="font-medium">Total:</span> ₹{{ cart['total'] }}</p>
-            <p><span class="font-medium">Status:</span> Delivered</p>
-        </div>
-        {% endfor %}
-      </section>
-    </main>
-  </body>
-</html>
+    </div>
+  </section>
+
+{% endblock %}
