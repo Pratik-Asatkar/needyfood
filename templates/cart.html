@@ -1,67 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %} {% block content%}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-</head>
+<section class="h-100 h-custom" style="background-color: #eee">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <h5 class="mb-3">
+                                    <a href="#!" class="text-body"><i
+                                            class="fas fa-long-arrow-alt-left me-2"></i>Continue
+                                        shopping</a>
+                                </h5>
+                                <hr />
 
-<body class="bg-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h2 class="text-3xl font-bold mb-8">Your Shopping Cart</h2>
-    <div class="flex flex-col md:flex-row md:space-x-8">
-      <div class="md:w-2/3">
-        {% for item in cart %}
-        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="flex items-center space-x-4">
-            <img
-              src="{{ item['img'] }}"
-              alt="{{ item['name'] }}" class="w-20 rounded-lg" />
-            <div>
-              <a href="{{ url_for('product.product_info', productid=item['_id']) }}"><h3 class="text-lg font-medium">{{ item['name'] }}</h3></a>
-              <p class="text-gray-700">₹{{ item['price'] }}</p>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div>
+                                        <p class="mb-1">Your cart</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0">
+                                            <span class="text-muted">Sort by:</span>
+                                            <a href="#!" class="text-body">price <i
+                                                    class="fas fa-angle-down mt-1"></i></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                {% for item in cart %}
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <div>
+                                                    <img src="{{ item['img'] }}" alt="{{ item['name'] }}"
+                                                        class="img-fluid rounded-3" alt="Shopping item"
+                                                        style="width: 65px" />
+                                                </div>
+                                                <div class="ms-3">
+                                                    <h5>{{ item['name'] }}</h5>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <p>No of Lots: {{ item['quantity'] }}</p>
+                                                <a href="{{ url_for('cart.add_quantity', productid=item['_id']) }}">+</a>
+                                                <a href="{{ url_for('cart.remove_quantity', productid=item['_id']) }}">-</a>
+                                                <a href="{{ url_for('cart.remove_product', productid=item['_id']) }}">Remove</a>
+                                              </div>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <div style="width: 80px">
+                                                    <h5 class="mb-0">quantity: {{ item['price'] }}</h5>
+                                                </div>
+                                                <a href="#!" style="color: #cecece"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card bg-primary text-white rounded-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h5 class="mb-0">Order Summary</h5>
+                                        </div>
+
+                                        <hr class="my-4" />
+
+                                        <div class="d-flex justify-content-between">
+                                            <p class="mb-2">Total Quantity</p>
+                                            <p class="mb-2">{{ total }}</p>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <p class="mb-2">Shipping</p>
+                                            <p class="mb-2">₹0.00</p>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between mb-4">
+                                            <p class="mb-2">Total(quantity)</p>
+                                            <p class="mb-2">{{ total }}</p>
+                                        </div>
+
+                                        {% if total != 0 %}
+                                        <a href="{{ url_for('cart.checkout_cart') }}"><button type="button"
+                                                class="btn btn-info btn-block btn-lg">
+                                                Checkout
+                                            </button></a>
+                                        {% else %}
+                                        <a href="#"><button type="button" class="btn btn-info btn-block btn-lg">
+                                                Checkout
+                                            </button></a>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ml-auto">
-              <p>Quantity: {{ item['quantity'] }}</p>
-              <a href="{{ url_for('cart.add_quantity', productid=item['_id']) }}">+</a>
-              <a href="{{ url_for('cart.remove_quantity', productid=item['_id']) }}">-</a>
-              <a href="{{ url_for('cart.remove_product', productid=item['_id']) }}">Remove</a>
-            </div>
-          </div>
         </div>
-        {% endfor %}
-      </div>
-      <div class="md:w-1/3">
-        <div class="bg-white p-4 rounded-lg shadow-md sticky top-12">
-          <h3 class="text-lg font-medium mb-4">Order Summary</h3>
-          <div class="flex justify-between mb-2">
-            <p>Subtotal:</p>
-            <p>₹{{ total }}</p>
-          </div>
-          <div class="flex justify-between mb-2">
-            <p>Shipping:</p>
-            <p>₹0.00</p>
-          </div>
-          <hr class="<EUGPSCoordinates>my-4" />
-          <div class="<EUGPSCoordinates>flex justify-between font-medium mb-4">
-            <p>Total:</p>
-            <p>₹{{ total }}</p>
-          </div>
-          {% if total != 0 %}
-          <a href="{{ url_for('cart.checkout_cart') }}"><button type="button" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 w-full">
-            Checkout
-          </button></a>
-          {% else %}
-          <a href="#"><button type="button" class="bg-black text-white py-2 px-4 rounded-md hover:bg-black w-full">
-            Checkout
-          </button></a>
-          {% endif %}
-        </div>
-      </div>
     </div>
-  </div>
-</body>
+</section>
 
-</html>
+{% endblock %}
